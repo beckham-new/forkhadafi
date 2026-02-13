@@ -41,7 +41,7 @@ function play(a){
    PASSWORD
 ===================== */
 
-const PASSWORD = "ily";
+const PASSWORD = "Ily";
 
 function checkPass(){
 
@@ -180,4 +180,5 @@ const obs = new IntersectionObserver(entries=>{
 });
 
 document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
+
 
