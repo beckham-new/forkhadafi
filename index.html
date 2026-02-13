@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Khadafi Leigh</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+<section class="password-screen" id="passScreen">
+  <h2>Something that made Valentine's exist</h2>
+  <input type="password" id="passInput">
+  <button onclick="checkPass()">Open</button>
+</section>
+
+<div id="hearts" class="hearts"></div>
+
+<!-- ENVELOPE -->
+<section class="intro hidden" id="intro">
+  <div class="envelope-wrapper">
+
+    <div class="envelope" id="envelope">
+      <div class="body"></div>
+      <div class="flap"></div>
+    </div>
+
+    <div class="paper" id="paper">
+      <button class="back-btn" id="backBtn">Back</button>
+      <h2>Happy Valentine.</h2>
+      <p id="typeText"></p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- GALLERY (HIDDEN UNTIL PASSWORD OK) -->
+<section class="gallery hidden" id="gallery">
+
+  <h2>On the 14th</h2>
+
+  <div class="photos">
+
+    <div class="photo-card fade">
+      <img src="images/foto1.jpg">
+      <p class="caption">I saw these flowers and immediately thought of you… so yeah, they’re yours.</p>
+    </div>
+
+    <div class="photo-card fade">
+      <img src="images/foto2.jpg">
+      <p class="caption">Walking to you with these felt kinda embarrassing… but also the happiest walk ever.</p>
+    </div>
+
+    <div class="photo-card fade">
+      <img src="images/foto3.jpg">
+      <p class="caption">Can you just… stay with me? Like, every day? That would be really nice 🤍</p>
+    </div>
+
+  </div>
+<textarea class="notes" placeholder="Write our sweet memories here..."></textarea>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

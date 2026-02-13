@@ -1,0 +1,251 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Quicksand',sans-serif;
+  background:linear-gradient(180deg,#780000);
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+/* HIDDEN */
+.hidden{
+  display:none;
+}
+
+/* PASSWORD */
+.password-screen{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+}
+
+.password-screen input{
+  padding:12px 20px;
+  border-radius:30px;
+  border:none;
+}
+
+.password-screen button{
+  background:#c1121f;
+  color:white;
+  border:none;
+  padding:10px 22px;
+  border-radius:30px;
+}
+
+/* HEARTS */
+.hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+
+.heart{
+  position:absolute;
+  animation: fall 8s linear forwards;
+}
+
+@keyframes fall{
+  from{transform:translateY(-10vh)}
+  to{transform:translateY(110vh);opacity:0}
+}
+
+/* INTRO */
+.intro{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* ENVELOPE */
+.envelope-wrapper{
+  position:relative;
+  width:260px;
+  height:130px;
+}
+
+.envelope .body{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:130px;
+  background:linear-gradient(145deg,#c1121f,#8e0e18);
+  border-radius:10px;
+  box-shadow:0 12px 25px rgba(0,0,0,.2);
+}
+
+.flap{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:130px;
+  background:linear-gradient(145deg,#ae1f23,#7a1015);
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;
+  transition:.7s;
+}
+
+.open .flap{
+  transform:rotateX(180deg);
+}
+
+/* PAPER */
+.paper{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%) translateY(80%);
+  width:360px;
+  min-height:220px;
+  background:#fffaf0;
+  color:#333;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 10px 20px rgba(0,0,0,.18);
+  opacity:0;
+  transition:1s;
+}
+
+.paper.show{
+  transform:translateX(-50%) translateY(-140px);
+  opacity:1;
+}
+
+/* GALLERY */
+.gallery{
+  padding:170px 20px;
+  background:#780000;
+}
+
+.photos{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:40px;
+  margin-top:30px;
+}
+
+.photo-card{
+  background:#fff;
+  padding:14px 14px 26px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,.18);
+  width:90%;
+  max-width:340px;
+  transition:.3s;
+}
+
+/* shake hover */
+.photo-card:hover{
+  animation:shake .5s ease-in-out infinite alternate;
+}
+
+@keyframes shake{
+  from{transform:rotate(-2deg) translateY(-4px);}
+  to{transform:rotate(2deg) translateY(4px);}
+}
+
+.photo-card img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.caption{
+  color:#333;
+  font-size:14px;
+  margin-top:12px;
+  font-style:italic;
+}
+
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.hidden{
+  display:none !important;
+}
+
+.back-btn{
+  background:#c1121f;
+  color:white;
+  border:none;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
+  cursor:pointer;
+
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+  transition:.25s;
+  margin-bottom:12px;
+}
+
+.back-btn:hover{
+  background:#8e0e18;
+  transform:translateY(-2px);
+}
+
+.back-btn:active{
+  transform:scale(.95);
+}
+
+#typeText{
+  white-space: pre-line; /* 🔥 ini yang bikin \n kebaca */
+  line-height: 1.8;
+}
+
+.gallery::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 20% 30%, rgba(255,255,255,.06), transparent 40%),
+             radial-gradient(circle at 80% 70%, rgba(255,255,255,.05), transparent 40%);
+  pointer-events:none;
+}
+/* ======================
+   NOTES / DIARY STYLE
+====================== */
+
+.notes{
+  width:90%;
+  max-width:400px;
+  height:110px;
+
+  margin-top:40px;
+  padding:14px;
+
+  background:#fffaf0;   /* warna kertas */
+  color:#333;
+
+  border:none;
+  border-radius:12px;
+
+  font-family:'Quicksand', serif;
+  font-style:italic;
+
+  box-shadow:0 8px 18px rgba(0,0,0,.15);
+
+  resize:none;
+}
+
+.notes:focus{
+  outline:none;
+  box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
